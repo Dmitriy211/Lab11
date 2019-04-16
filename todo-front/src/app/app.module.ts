@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
-import { ItemListComponent } from './item-list/item-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ItemComponent } from './item/item.component';
 
@@ -11,7 +10,6 @@ import { ItemComponent } from './item/item.component';
   declarations: [
     AppComponent,
     MainComponent,
-    ItemListComponent,
     ItemComponent
   ],
   imports: [
