@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {ProviderService} from '../shared/services/provider.service';
 
 @Component({
   selector: 'app-item',
@@ -8,6 +9,8 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ItemComponent implements OnInit {
 
   @Input() name = 'default name';
+
+  public message = '';
 
   constructor() { }
 

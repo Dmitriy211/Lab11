@@ -6,6 +6,9 @@ import { MainComponent } from './main/main.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ItemComponent } from './item/item.component';
 
+import {ProviderService} from './shared/services/provider.service';
+import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,9 +17,10 @@ import { ItemComponent } from './item/item.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ProviderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

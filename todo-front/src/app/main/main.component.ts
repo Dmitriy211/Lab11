@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ProviderService} from '../shared/services/provider.service';
+import {ITaskList} from '../shared/models/tasklist';
 
 @Component({
   selector: 'app-main',
@@ -7,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  taskLists = ['task one', 'task two', 'task three', 'task four', 'task five'];
+  public taskLists: ITaskList[] = [];
 
-  constructor() { }
+  constructor(private provider: ProviderService) { }
 
   ngOnInit() {
+    this.provider.get_tasklists().then(res => {
+      this.taskLists = res;
+    });
   }
 
 }
