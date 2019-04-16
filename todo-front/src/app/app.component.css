@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+
+.navbar {
+  margin-bottom: 50px;
+  border-radius: 0;
+}
+
+/* Remove the jumbotron's default bottom margin */
+.jumbotron {
+  margin-bottom: 0;
+}
+
+.main_hold {
+  min-height: 70vh
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+  background-color: #e9ecef;
+  padding: 25px;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: ghostwhite;
+}
+
+.bg-nav {
+  background-color: #001f3f;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.styled_link {
+  color: lightskyblue;
+}
+
+.header-top {
+  background-color: #cccccc;
+  color: #444444;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  /*background-image: url("../assets/default-images/background_header.jpg");*/
+}
+
+.header-top-inside {
+  background-color: rgba(0, 0, 0, .4);
+  width:max-content;
+  padding: 1vw 11vw;
+}
+
+footer {
+  padding: 20px 10px;
+  color: ghostwhite;
+  background-color: #001f3f;
+}
+
+.top-p {color:ghostwhite}

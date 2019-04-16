@@ -1,0 +1,18 @@
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.jumbotron {
+  padding: 20px;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.jumbotron:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+  cursor: pointer;
+  border: 2px solid lightslategrey;
+}
