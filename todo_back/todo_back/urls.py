@@ -18,7 +18,7 @@ from django.urls import path
 from api import views
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
-    path('tasklists/<str:tasklist_name>', views.get_tasklist),
-    path('tasklists/', views.all_tasklists),
+    path('admin/', admin.site.urls),
+    path('tasklists/<str:tasklist_name>', views.tasklist_detail),
+    path('tasklists/', views.tasklist_list),
 ]

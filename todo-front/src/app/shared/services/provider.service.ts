@@ -17,4 +17,10 @@ export class ProviderService extends MainService {
   get_tasklists(): Promise<ITaskList[]> {
     return this.get('http://localhost:8000/tasklists/', {});
   }
+
+  create_tasklist(name: any): Promise<ITaskList> {
+    return this.post('http://localhost:8000/tasklists/', {
+      name: name
+    });
+  }
 }
