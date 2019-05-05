@@ -19,6 +19,11 @@ from api import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tasklists/<str:tasklist_name>', views.tasklist_detail),
-    path('tasklists/', views.tasklist_list),
+    path('tasklists/<str:tasklist_name>', views.TaskListDetail.as_view()),
+    path('tasklists/', views.TaskListList.as_view()),
+    path('tasklists/<str:tasklist_name>/', views.tasklist_tasks),
+    path('tasklists/<str:tasklist_name>/<str:task_name>', views.task_detail),
+    path('users/', views.UserList.as_view()),
+    path('login/', views.login)
+
 ]

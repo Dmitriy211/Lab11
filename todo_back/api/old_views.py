@@ -11,8 +11,8 @@ from api.serializers import TaskListSerializer, TaskSerializer
 def tasklist_list(request):
     if request.method == 'GET':
         tasklists = TaskList.objects.all()
-        json_tasklists = [tl.to_json() for tl in tasklists]
-        return JsonResponse(json_tasklists, safe=False)
+        serializer = TaskListSerializer(tasklists, many=True)
+        return JsonResponse(serializer.data, safe=False, status=200)
 
     elif request.method == 'POST':
         data = json.loads(request.body)
@@ -24,7 +24,7 @@ def tasklist_list(request):
 @csrf_exempt
 def tasklist_detail(request, tasklist_name):
     try:
-        tasklist = TaskList.objects.get(id=tasklist_name)
+        tasklist = TaskList.objects.get(name=tasklist_name)
     except TaskList.DoesNotExist as e:
         return JsonResponse({'error': str(e)})
 
@@ -41,3 +41,10 @@ def tasklist_detail(request, tasklist_name):
     elif request.method == 'DELETE':
         tasklist.delete()
         return JsonResponse({}, status=204)
+
+@csrf_exempt
+def tasklist_tasks(request, tasklist_name):
+    tasklist = TaskList.objects.get(name=tasklist_name)
+    tasks = tasklist.task_set.all()
+    serializer = TaskSerializer(tasks, many=True)
+    return JsonResponse(serializer.data, safe=False)

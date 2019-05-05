@@ -20,7 +20,7 @@ class Task(models.Model):
     created_at = models.DateTimeField()
     due_on = models.DateTimeField()
     status = models.CharField(max_length=20)
-    task_list = models.ForeignKey(TaskList, on_delete=models.CASCADE)
+    tasklist = models.ForeignKey(TaskList, on_delete=models.CASCADE)
 
     def __str__(self):
         return '{}'.format(self.name)
